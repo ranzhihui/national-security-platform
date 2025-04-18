@@ -13,101 +13,30 @@
                 <h1>国家安全知识学习平台</h1>
             </div>
             <ul class="nav-links">
-                <li><a href="#home">首页</a></li>
-                <li><a href="#courses">录播课程</a></li>
-                <li><a href="#games">知识小游戏</a></li>
-                <li><a href="#resources">学习资源</a></li>
+                <li><a href="login.html">登录</a></li>
+                <li><a href="register.html">注册</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <h2>国家安全 人人有责</h2>
-                <p>让我们一起学习国家安全知识，共同维护国家安全</p>
-                <a href="#courses" class="cta-button">开始学习</a>
-            </div>
+        <section class="welcome-section">
+            <h2>欢迎使用国家安全知识学习平台</h2>
+            <p>请选择您的身份进入相应功能</p>
         </section>
 
-        <section id="courses" class="courses">
-            <h2>国家安全录播课程</h2>
-            <div class="course-grid">
-                <div class="course-card">
-                    <div class="video-container">
-                        <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114328170659936&bvid=BV1tCdqYeEif&cid=29383655752&p=1" 
-                                scrolling="no" 
-                                border="0" 
-                                frameborder="no" 
-                                framespacing="0" 
-                                allowfullscreen="true">
-                        </iframe>
-                    </div>
-                    <h3>国家安全基础课程</h3>
-                    <p>了解国家安全的基本概念和重要性</p>
-                    <div class="course-info">
-                        <span class="duration">时长：30分钟</span>
-                        <span class="views">观看次数：1,234</span>
-                    </div>
-                </div>
-                <div class="course-card">
-                    <div class="video-placeholder">
-                        <div class="play-icon">▶</div>
-                        <p>更多课程即将上线</p>
-                    </div>
-                    <h3>网络安全知识</h3>
-                    <p>学习如何保护个人信息和网络安全</p>
-                    <div class="course-info">
-                        <span class="duration">时长：25分钟</span>
-                        <span class="views">观看次数：987</span>
-                    </div>
-                </div>
-                <div class="course-card">
-                    <div class="video-placeholder">
-                        <div class="play-icon">▶</div>
-                        <p>更多课程即将上线</p>
-                    </div>
-                    <h3>国土安全知识</h3>
-                    <p>了解国土安全的重要性和保护措施</p>
-                    <div class="course-info">
-                        <span class="duration">时长：35分钟</span>
-                        <span class="views">观看次数：1,567</span>
-                    </div>
-                </div>
+        <section class="role-cards">
+            <div class="role-card" onclick="location.href='student.html'">
+                <h3>学生入口</h3>
+                <p>学习国家安全知识，参与互动游戏</p>
             </div>
-        </section>
-
-        <section id="games" class="games">
-            <h2>知识小游戏</h2>
-            <div class="game-grid">
-                <div class="game-card">
-                    <div class="placeholder-img">国家安全知识问答</div>
-                    <h3>国家安全知识问答</h3>
-                    <p>通过问答游戏学习国家安全知识</p>
-                    <a href="#" class="play-button">开始游戏</a>
-                </div>
-                <div class="game-card">
-                    <div class="placeholder-img">安全知识拼图</div>
-                    <h3>安全知识拼图</h3>
-                    <p>通过拼图游戏了解国家安全标志</p>
-                    <a href="#" class="play-button">开始游戏</a>
-                </div>
+            <div class="role-card" onclick="location.href='teacher.html'">
+                <h3>教师入口</h3>
+                <p>查看学生学习进度，管理班级</p>
             </div>
-        </section>
-
-        <section id="resources" class="resources">
-            <h2>学习资源</h2>
-            <div class="resource-list">
-                <div class="resource-item">
-                    <h3>国家安全法律法规</h3>
-                    <p>了解相关法律法规，增强法律意识</p>
-                    <a href="#" class="download-button">下载资料</a>
-                </div>
-                <div class="resource-item">
-                    <h3>安全教育手册</h3>
-                    <p>全面的安全教育指南</p>
-                    <a href="#" class="download-button">下载资料</a>
-                </div>
+            <div class="role-card" onclick="location.href='school.html'">
+                <h3>学校入口</h3>
+                <p>查看全校学习情况，管理教师</p>
             </div>
         </section>
     </main>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频课程 - 国家安全知识学习平台</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>国家安全知识学习平台</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="student.html">返回</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="video-page">
+        <div class="video-container">
+            <div class="video-player">
+                <iframe id="videoFrame" 
+                        src="" 
+                        scrolling="no" 
+                        border="0" 
+                        frameborder="no" 
+                        framespacing="0" 
+                        allowfullscreen="true">
+                </iframe>
+            </div>
+            <div class="video-info">
+                <h2 id="videoTitle">视频标题</h2>
+                <p id="videoDescription">视频描述</p>
+                <div class="video-meta">
+                    <span class="duration">时长：<span id="videoDuration">00:00</span></span>
+                    <span class="views">观看次数：<span id="videoViews">0</span></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="video-list">
+            <h3>相关视频</h3>
+            <div class="related-videos">
+                <div class="video-card" onclick="loadVideo('video1')">
+                    <div class="thumbnail">缩略图1</div>
+                    <h4>国家安全基础课程</h4>
+                    <p>了解国家安全的基本概念和重要性</p>
+                </div>
+                <div class="video-card" onclick="loadVideo('video2')">
+                    <div class="thumbnail">缩略图2</div>
+                    <h4>网络安全知识</h4>
+                    <p>学习如何保护个人信息和网络安全</p>
+                </div>
+                <div class="video-card" onclick="loadVideo('video3')">
+                    <div class="thumbnail">缩略图3</div>
+                    <h4>国土安全知识</h4>
+                    <p>了解国土安全的重要性和保护措施</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 国家安全知识学习平台</p>
+            <p>联系我们：security@example.com</p>
+        </div>
+    </footer>
+
+    <script>
+        // 视频数据
+        const videos = {
+            'video1': {
+                title: '国家安全基础课程',
+                description: '了解国家安全的基本概念和重要性',
+                duration: '30:00',
+                views: '1,234',
+                url: '//player.bilibili.com/player.html?isOutside=true&aid=114328170659936&bvid=BV1tCdqYeEif&cid=29383655752&p=1'
+            },
+            'video2': {
+                title: '网络安全知识',
+                description: '学习如何保护个人信息和网络安全',
+                duration: '25:00',
+                views: '987',
+                url: '//player.bilibili.com/player.html?isOutside=true&aid=114328170659936&bvid=BV1tCdqYeEif&cid=29383655752&p=1'
+            },
+            'video3': {
+                title: '国土安全知识',
+                description: '了解国土安全的重要性和保护措施',
+                duration: '35:00',
+                views: '1,567',
+                url: '//player.bilibili.com/player.html?isOutside=true&aid=114328170659936&bvid=BV1tCdqYeEif&cid=29383655752&p=1'
+            }
+        };
+
+        function loadVideo(videoId) {
+            const video = videos[videoId];
+            document.getElementById('videoFrame').src = video.url;
+            document.getElementById('videoTitle').textContent = video.title;
+            document.getElementById('videoDescription').textContent = video.description;
+            document.getElementById('videoDuration').textContent = video.duration;
+            document.getElementById('videoViews').textContent = video.views;
+        }
+
+        // 默认加载第一个视频
+        window.onload = function() {
+            loadVideo('video1');
+        };
+    </script>
+</body>
+</html> 

@@ -18,10 +18,10 @@
         </nav>
     </header>
 
-    <main class="auth-container">
-        <div class="auth-box">
+    <main class="login-page">
+        <div class="login-container">
             <h2>用户登录</h2>
-            <form class="auth-form">
+            <form id="loginForm">
                 <div class="form-group">
                     <label for="username">用户名</label>
                     <input type="text" id="username" name="username" required>
@@ -30,9 +30,18 @@
                     <label for="password">密码</label>
                     <input type="password" id="password" name="password" required>
                 </div>
-                <button type="submit" class="auth-button">登录</button>
+                <div class="form-group">
+                    <label for="userType">用户类型</label>
+                    <select id="userType" name="userType" required>
+                        <option value="">请选择用户类型</option>
+                        <option value="student">学生</option>
+                        <option value="teacher">教师</option>
+                        <option value="school">学校</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-button">登录</button>
             </form>
-            <p class="auth-link">还没有账号？<a href="register.html">立即注册</a></p>
+            <p class="register-link">还没有账号？<a href="register.html">立即注册</a></p>
         </div>
     </main>
 
@@ -43,6 +52,22 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const userType = document.getElementById('userType').value;
+
+            // 这里添加登录逻辑
+            if (userType === 'student') {
+                window.location.href = 'student.html';
+            } else if (userType === 'teacher') {
+                window.location.href = 'teacher.html';
+            } else if (userType === 'school') {
+                window.location.href = 'school.html';
+            }
+        });
+    </script>
 </body>
 </html> 

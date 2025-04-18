@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>学校管理员主页 - 国家安全知识学习平台</title>
+    <title>学校管理 - 国家安全知识学习平台</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -13,58 +13,126 @@
                 <h1>国家安全知识学习平台</h1>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html">首页</a></li>
-                <li><a href="school-progress.html">全校进度</a></li>
-                <li><a href="class-management.html">班级管理</a></li>
-                <li><a href="teacher-management.html">教师管理</a></li>
-                <li><a href="login.html">退出登录</a></li>
+                <li><a href="index.html">退出登录</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="role-school">
-        <section class="dashboard">
-            <h2>全校学习情况</h2>
-            <div class="school-progress">
-                <div class="progress-card">
-                    <h3>全校平均完成率</h3>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 65%">65%</div>
-                    </div>
+    <main class="school-page">
+        <div class="school-container">
+            <div class="school-header">
+                <h2>学校管理面板</h2>
+                <div class="school-info">
+                    <span>欢迎，第一实验小学</span>
+                    <span>学校代码：SCH001</span>
                 </div>
             </div>
 
-            <div class="class-list">
-                <h3>班级进度统计</h3>
-                <table class="progress-table">
-                    <thead>
-                        <tr>
-                            <th>班级</th>
-                            <th>学生人数</th>
-                            <th>平均完成率</th>
-                            <th>教师</th>
-                            <th>最近更新时间</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>一年级一班</td>
-                            <td>45</td>
-                            <td>75%</td>
-                            <td>王老师</td>
-                            <td>2024-03-15</td>
-                        </tr>
-                        <tr>
-                            <td>一年级二班</td>
-                            <td>42</td>
-                            <td>70%</td>
-                            <td>李老师</td>
-                            <td>2024-03-14</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="school-stats">
+                <div class="stat-card">
+                    <h3>教师总数</h3>
+                    <div class="stat-value">25</div>
+                </div>
+                <div class="stat-card">
+                    <h3>班级总数</h3>
+                    <div class="stat-value">12</div>
+                </div>
+                <div class="stat-card">
+                    <h3>学生总数</h3>
+                    <div class="stat-value">540</div>
+                </div>
+                <div class="stat-card">
+                    <h3>平均学习时长</h3>
+                    <div class="stat-value">2.2小时</div>
+                </div>
             </div>
-        </section>
+
+            <div class="grade-progress">
+                <h3>年级学习情况</h3>
+                <div class="progress-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>年级</th>
+                                <th>班级数</th>
+                                <th>学生数</th>
+                                <th>平均完成率</th>
+                                <th>平均积分</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>一年级</td>
+                                <td>4</td>
+                                <td>180</td>
+                                <td>75%</td>
+                                <td>250</td>
+                                <td><button class="view-details">查看详情</button></td>
+                            </tr>
+                            <tr>
+                                <td>二年级</td>
+                                <td>4</td>
+                                <td>180</td>
+                                <td>82%</td>
+                                <td>280</td>
+                                <td><button class="view-details">查看详情</button></td>
+                            </tr>
+                            <tr>
+                                <td>三年级</td>
+                                <td>4</td>
+                                <td>180</td>
+                                <td>78%</td>
+                                <td>270</td>
+                                <td><button class="view-details">查看详情</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="teacher-management">
+                <h3>教师管理</h3>
+                <div class="teacher-list">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>教师姓名</th>
+                                <th>负责班级</th>
+                                <th>学生数</th>
+                                <th>平均完成率</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>张老师</td>
+                                <td>三年级一班</td>
+                                <td>45</td>
+                                <td>85%</td>
+                                <td><button class="view-details">查看详情</button></td>
+                            </tr>
+                            <tr>
+                                <td>李老师</td>
+                                <td>二年级三班</td>
+                                <td>45</td>
+                                <td>80%</td>
+                                <td><button class="view-details">查看详情</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="school-management">
+                <h3>学校管理</h3>
+                <div class="management-actions">
+                    <button class="action-button">添加教师</button>
+                    <button class="action-button">导出数据</button>
+                    <button class="action-button">发送通知</button>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer>
@@ -74,6 +142,15 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script>
+        // 查看详情
+        document.querySelectorAll('.view-details').forEach(button => {
+            button.addEventListener('click', function() {
+                const row = this.closest('tr');
+                const name = row.cells[0].textContent;
+                alert(`查看${name}的详细数据`);
+            });
+        });
+    </script>
 </body>
 </html> 

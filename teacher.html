@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>教师主页 - 国家安全知识学习平台</title>
+    <title>教师管理 - 国家安全知识学习平台</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -13,54 +13,89 @@
                 <h1>国家安全知识学习平台</h1>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html">首页</a></li>
-                <li><a href="student-progress.html">学生进度</a></li>
-                <li><a href="course-management.html">课程管理</a></li>
-                <li><a href="login.html">退出登录</a></li>
+                <li><a href="index.html">退出登录</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="role-teacher">
-        <section class="dashboard">
-            <h2>班级学习情况</h2>
-            <div class="class-progress">
-                <div class="progress-card">
-                    <h3>班级平均完成率</h3>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 75%">75%</div>
-                    </div>
+    <main class="teacher-page">
+        <div class="teacher-container">
+            <div class="teacher-header">
+                <h2>教师管理面板</h2>
+                <div class="teacher-info">
+                    <span>欢迎，张老师</span>
+                    <span>班级：三年级一班</span>
                 </div>
             </div>
 
-            <div class="student-list">
-                <h3>学生列表</h3>
-                <table class="progress-table">
-                    <thead>
-                        <tr>
-                            <th>学生姓名</th>
-                            <th>课程完成率</th>
-                            <th>游戏完成率</th>
-                            <th>最近学习时间</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>张三</td>
-                            <td>80%</td>
-                            <td>60%</td>
-                            <td>2024-03-15</td>
-                        </tr>
-                        <tr>
-                            <td>李四</td>
-                            <td>70%</td>
-                            <td>50%</td>
-                            <td>2024-03-14</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="class-stats">
+                <div class="stat-card">
+                    <h3>班级总人数</h3>
+                    <div class="stat-value">45</div>
+                </div>
+                <div class="stat-card">
+                    <h3>平均学习时长</h3>
+                    <div class="stat-value">2.5小时</div>
+                </div>
+                <div class="stat-card">
+                    <h3>平均积分</h3>
+                    <div class="stat-value">280</div>
+                </div>
             </div>
-        </section>
+
+            <div class="student-progress">
+                <h3>学生学习进度</h3>
+                <div class="progress-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>学生姓名</th>
+                                <th>视频学习</th>
+                                <th>游戏完成</th>
+                                <th>资源下载</th>
+                                <th>总积分</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>张三</td>
+                                <td>8/10</td>
+                                <td>3/5</td>
+                                <td>4/6</td>
+                                <td>350</td>
+                                <td><button class="view-details">查看详情</button></td>
+                            </tr>
+                            <tr>
+                                <td>李四</td>
+                                <td>6/10</td>
+                                <td>2/5</td>
+                                <td>3/6</td>
+                                <td>280</td>
+                                <td><button class="view-details">查看详情</button></td>
+                            </tr>
+                            <tr>
+                                <td>王五</td>
+                                <td>9/10</td>
+                                <td>4/5</td>
+                                <td>5/6</td>
+                                <td>420</td>
+                                <td><button class="view-details">查看详情</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="class-management">
+                <h3>班级管理</h3>
+                <div class="management-actions">
+                    <button class="action-button">添加学生</button>
+                    <button class="action-button">导出数据</button>
+                    <button class="action-button">发送通知</button>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer>
@@ -70,6 +105,15 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script>
+        // 查看学生详情
+        document.querySelectorAll('.view-details').forEach(button => {
+            button.addEventListener('click', function() {
+                const row = this.closest('tr');
+                const studentName = row.cells[0].textContent;
+                alert(`查看${studentName}的详细学习记录`);
+            });
+        });
+    </script>
 </body>
 </html> 

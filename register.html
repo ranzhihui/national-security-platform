@@ -18,34 +18,42 @@
         </nav>
     </header>
 
-    <main class="auth-container">
-        <div class="auth-box">
+    <main class="register-page">
+        <div class="register-container">
             <h2>用户注册</h2>
-            <form class="auth-form">
+            <form id="registerForm">
                 <div class="form-group">
                     <label for="username">用户名</label>
                     <input type="text" id="username" name="username" required>
-                </div>
-                <div class="form-group">
-                    <label for="role">用户角色</label>
-                    <select id="role" name="role" required>
-                        <option value="">请选择角色</option>
-                        <option value="student">学生</option>
-                        <option value="teacher">教师</option>
-                        <option value="school">学校管理员</option>
-                    </select>
                 </div>
                 <div class="form-group">
                     <label for="password">密码</label>
                     <input type="password" id="password" name="password" required>
                 </div>
                 <div class="form-group">
-                    <label for="confirm-password">确认密码</label>
-                    <input type="password" id="confirm-password" name="confirm-password" required>
+                    <label for="confirmPassword">确认密码</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
                 </div>
-                <button type="submit" class="auth-button">注册</button>
+                <div class="form-group">
+                    <label for="userType">用户类型</label>
+                    <select id="userType" name="userType" required>
+                        <option value="">请选择用户类型</option>
+                        <option value="student">学生</option>
+                        <option value="teacher">教师</option>
+                        <option value="school">学校</option>
+                    </select>
+                </div>
+                <div class="form-group" id="schoolCodeGroup" style="display: none;">
+                    <label for="schoolCode">学校代码</label>
+                    <input type="text" id="schoolCode" name="schoolCode">
+                </div>
+                <div class="form-group" id="teacherCodeGroup" style="display: none;">
+                    <label for="teacherCode">教师代码</label>
+                    <input type="text" id="teacherCode" name="teacherCode">
+                </div>
+                <button type="submit" class="submit-button">注册</button>
             </form>
-            <p class="auth-link">已有账号？<a href="login.html">立即登录</a></p>
+            <p class="login-link">已有账号？<a href="login.html">立即登录</a></p>
         </div>
     </main>
 
@@ -56,6 +64,29 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('userType').addEventListener('change', function() {
+            const schoolCodeGroup = document.getElementById('schoolCodeGroup');
+            const teacherCodeGroup = document.getElementById('teacherCodeGroup');
+            
+            if (this.value === 'school') {
+                schoolCodeGroup.style.display = 'block';
+                teacherCodeGroup.style.display = 'none';
+            } else if (this.value === 'teacher') {
+                schoolCodeGroup.style.display = 'none';
+                teacherCodeGroup.style.display = 'block';
+            } else {
+                schoolCodeGroup.style.display = 'none';
+                teacherCodeGroup.style.display = 'none';
+            }
+        });
+
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // 这里添加注册逻辑
+            alert('注册成功！');
+            window.location.href = 'login.html';
+        });
+    </script>
 </body>
 </html> 

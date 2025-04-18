@@ -10,21 +10,19 @@ Thumbs.db
 
 # 依赖目录
 node_modules/
-bower_components/
+venv/
 
 # 日志文件
 *.log
-npm-debug.log*
 
-# 环境变量文件
+# 临时文件
+*.tmp
+*.temp
+
+# 本地配置文件
 .env
 .env.local
 
 # 构建输出
 dist/
-build/
-out/
-
-# 临时文件
-*.tmp
-*.temp 
+build/ 
