@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>国家安全知识问答 - 国家安全知识学习平台</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>国家安全知识学习平台</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="games.html">返回游戏列表</a></li>
+                <li><a href="login.html">退出登录</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="quiz-page">
+        <div class="quiz-header">
+            <div class="points-display">
+                <h2>我的积分</h2>
+                <div class="points-value">350</div>
+                <p>完成本游戏可获得40积分</p>
+            </div>
+            <div class="quiz-progress">
+                <div class="progress-bar">
+                    <div class="progress" style="width: 0%">0/10</div>
+                </div>
+                <p>第1题/共10题</p>
+            </div>
+        </div>
+
+        <div class="quiz-container">
+            <div class="question-card">
+                <h2 class="question">1. 国家安全的基本内涵是什么？</h2>
+                <div class="options">
+                    <button class="option">A. 国家政权、主权、统一和领土完整</button>
+                    <button class="option">B. 人民福祉、经济社会可持续发展</button>
+                    <button class="option">C. 国家其他重大利益</button>
+                    <button class="option">D. 以上都是</button>
+                </div>
+            </div>
+
+            <div class="quiz-controls">
+                <button class="control-button prev" disabled>上一题</button>
+                <button class="control-button next">下一题</button>
+            </div>
+        </div>
+
+        <div class="quiz-summary" style="display: none;">
+            <h2>答题完成！</h2>
+            <div class="score-display">
+                <p>您的得分：<span class="score">0</span>/100</p>
+                <p>获得积分：<span class="earned-points">0</span></p>
+            </div>
+            <div class="summary-controls">
+                <button class="control-button restart">重新开始</button>
+                <button class="control-button back">返回游戏列表</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 国家安全知识学习平台</p>
+            <p>联系我们：security@example.com</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 

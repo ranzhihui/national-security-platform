@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网络安全拼图 - 国家安全知识学习平台</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>国家安全知识学习平台</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="games.html">返回游戏列表</a></li>
+                <li><a href="login.html">退出登录</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="puzzle-page">
+        <div class="puzzle-header">
+            <div class="points-display">
+                <h2>我的积分</h2>
+                <div class="points-value">350</div>
+                <p>完成本游戏可获得40积分</p>
+            </div>
+            <div class="puzzle-info">
+                <div class="timer">时间：<span id="time">00:00</span></div>
+                <div class="moves">移动次数：<span id="moves">0</span></div>
+            </div>
+        </div>
+
+        <div class="puzzle-container">
+            <div class="puzzle-board" id="puzzle-board">
+                <!-- 拼图块将通过JavaScript动态生成 -->
+            </div>
+            <div class="puzzle-controls">
+                <button class="control-button shuffle">重新开始</button>
+                <button class="control-button hint">提示</button>
+            </div>
+        </div>
+
+        <div class="puzzle-summary" style="display: none;">
+            <h2>拼图完成！</h2>
+            <div class="score-display">
+                <p>用时：<span id="final-time">00:00</span></p>
+                <p>移动次数：<span id="final-moves">0</span></p>
+                <p>获得积分：<span class="earned-points">0</span></p>
+            </div>
+            <div class="summary-controls">
+                <button class="control-button restart">再玩一次</button>
+                <button class="control-button back">返回游戏列表</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 国家安全知识学习平台</p>
+            <p>联系我们：security@example.com</p>
+        </div>
+    </footer>
+
+    <script src="js/puzzle.js"></script>
+</body>
+</html> 

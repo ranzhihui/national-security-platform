@@ -1,49 +1,64 @@
 # 国家安全知识学习平台
 
-这是一个面向偏远地区中小学生的国家安全知识学习平台，通过静态网站的形式提供国家安全教育内容。
+这是一个专注于国家安全知识学习的在线平台，包含课程学习、知识问答和互动游戏等功能。
 
 ## 功能特点
 
-- 国家安全知识录播课程
-- 互动式知识小游戏
-- 学习资源下载
-- 响应式设计，适配各种设备
-
-## 项目结构
-
-```
-├── index.html          # 主页面
-├── css/
-│   └── style.css       # 样式文件
-├── js/
-│   └── main.js         # JavaScript交互脚本
-└── images/             # 图片资源目录
-```
-
-## 使用方法
-
-1. 克隆或下载本项目到本地
-2. 使用浏览器打开 `index.html` 文件
-3. 浏览网站内容，体验各项功能
+- 用户注册与登录系统
+- 国家安全知识课程学习
+- 互动知识问答游戏
+- 网络安全拼图游戏
+- 积分奖励系统
 
 ## 技术栈
 
 - HTML5
 - CSS3
-- JavaScript (ES6+)
+- JavaScript
+- 响应式设计
 
-## 开发计划
+## 项目结构
 
-- [ ] 添加更多国家安全教育课程
-- [ ] 开发互动式小游戏
-- [ ] 增加用户学习进度跟踪
-- [ ] 添加在线测试功能
-- [ ] 优化移动端体验
+```
+├── css/
+│   ├── style.css
+│   ├── puzzle.css
+│   └── quiz.css
+├── js/
+│   ├── main.js
+│   ├── puzzle.js
+│   └── quiz.js
+├── images/
+├── index.html
+├── login.html
+├── register.html
+├── courses.html
+├── games.html
+└── README.md
+```
+
+## 部署说明
+
+1. 克隆仓库：
+```bash
+git clone https://github.com/yourusername/national-security-platform.git
+```
+
+2. 打开项目目录：
+```bash
+cd national-security-platform
+```
+
+3. 在浏览器中打开index.html文件即可运行项目
 
 ## 贡献指南
 
-欢迎提交Issue和Pull Request来帮助改进这个项目。
+欢迎提交Pull Request来改进项目。请确保您的代码符合以下要求：
+
+- 遵循现有的代码风格
+- 添加适当的注释
+- 确保代码的可维护性
 
 ## 许可证
 
-本项目采用 MIT 许可证。 
+MIT License 

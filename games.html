@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>知识小游戏 - 国家安全知识学习平台</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>国家安全知识学习平台</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="student.html">返回主页</a></li>
+                <li><a href="login.html">退出登录</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="games-page">
+        <div class="points-display">
+            <h2>我的积分</h2>
+            <div class="points-value">350</div>
+            <p>每完成一个小游戏可获得40积分</p>
+        </div>
+
+        <section class="game-categories">
+            <h2>游戏分类</h2>
+            <div class="category-tabs">
+                <button class="category-tab active">全部游戏</button>
+                <button class="category-tab">知识问答</button>
+                <button class="category-tab">拼图游戏</button>
+                <button class="category-tab">记忆游戏</button>
+            </div>
+        </section>
+
+        <section class="game-grid">
+            <div class="game-card">
+                <div class="game-preview">
+                    <img src="images/game1.jpg" alt="国家安全知识问答">
+                </div>
+                <div class="game-info">
+                    <h3>国家安全知识问答</h3>
+                    <p>通过问答形式学习国家安全知识</p>
+                    <div class="game-meta">
+                        <span class="difficulty">难度：简单</span>
+                        <span class="points">+40积分</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 100%">已完成</div>
+                    </div>
+                    <button class="play-button">开始游戏</button>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-preview">
+                    <img src="images/game2.jpg" alt="网络安全拼图">
+                </div>
+                <div class="game-info">
+                    <h3>网络安全拼图</h3>
+                    <p>通过拼图游戏学习网络安全知识</p>
+                    <div class="game-meta">
+                        <span class="difficulty">难度：中等</span>
+                        <span class="points">+40积分</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 50%">进行中</div>
+                    </div>
+                    <button class="play-button">继续游戏</button>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="game-preview">
+                    <img src="images/game3.jpg" alt="国土安全记忆游戏">
+                </div>
+                <div class="game-info">
+                    <h3>国土安全记忆游戏</h3>
+                    <p>通过记忆游戏学习国土安全知识</p>
+                    <div class="game-meta">
+                        <span class="difficulty">难度：困难</span>
+                        <span class="points">+40积分</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 0%">未开始</div>
+                    </div>
+                    <button class="play-button">开始游戏</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 国家安全知识学习平台</p>
+            <p>联系我们：security@example.com</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
