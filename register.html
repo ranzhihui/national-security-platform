@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>注册 - 国家安全知识学习平台</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -13,29 +14,29 @@
                 <h1>国家安全知识学习平台</h1>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html">返回首页</a></li>
+                <li><a href="index.html"><i class="fas fa-home"></i> 返回首页</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="register-page">
         <div class="register-container">
-            <h2>用户注册</h2>
+            <h2>创建账号</h2>
             <form id="registerForm">
                 <div class="form-group">
-                    <label for="username">用户名</label>
-                    <input type="text" id="username" name="username" required>
+                    <label for="username"><i class="fas fa-user"></i> 用户名</label>
+                    <input type="text" id="username" name="username" placeholder="请输入用户名" required>
                 </div>
                 <div class="form-group">
-                    <label for="password">密码</label>
-                    <input type="password" id="password" name="password" required>
+                    <label for="password"><i class="fas fa-lock"></i> 密码</label>
+                    <input type="password" id="password" name="password" placeholder="请输入密码" required>
                 </div>
                 <div class="form-group">
-                    <label for="confirmPassword">确认密码</label>
-                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    <label for="confirmPassword"><i class="fas fa-lock"></i> 确认密码</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="请再次输入密码" required>
                 </div>
                 <div class="form-group">
-                    <label for="userType">用户类型</label>
+                    <label for="userType"><i class="fas fa-users"></i> 用户类型</label>
                     <select id="userType" name="userType" required>
                         <option value="">请选择用户类型</option>
                         <option value="student">学生</option>
@@ -44,14 +45,16 @@
                     </select>
                 </div>
                 <div class="form-group" id="schoolCodeGroup" style="display: none;">
-                    <label for="schoolCode">学校代码</label>
-                    <input type="text" id="schoolCode" name="schoolCode">
+                    <label for="schoolCode"><i class="fas fa-building"></i> 学校代码</label>
+                    <input type="text" id="schoolCode" name="schoolCode" placeholder="请输入学校代码">
                 </div>
                 <div class="form-group" id="teacherCodeGroup" style="display: none;">
-                    <label for="teacherCode">教师代码</label>
-                    <input type="text" id="teacherCode" name="teacherCode">
+                    <label for="teacherCode"><i class="fas fa-chalkboard-teacher"></i> 教师代码</label>
+                    <input type="text" id="teacherCode" name="teacherCode" placeholder="请输入教师代码">
                 </div>
-                <button type="submit" class="submit-button">注册</button>
+                <button type="submit" class="submit-button">
+                    <i class="fas fa-user-plus"></i> 注册
+                </button>
             </form>
             <p class="login-link">已有账号？<a href="login.html">立即登录</a></p>
         </div>
@@ -60,7 +63,7 @@
     <footer>
         <div class="footer-content">
             <p>© 2024 国家安全知识学习平台</p>
-            <p>联系我们：security@example.com</p>
+            <p><i class="fas fa-envelope"></i> 联系我们：security@example.com</p>
         </div>
     </footer>
 
@@ -83,6 +86,14 @@
 
         document.getElementById('registerForm').addEventListener('submit', function(e) {
             e.preventDefault();
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if (password !== confirmPassword) {
+                alert('两次输入的密码不一致！');
+                return;
+            }
+            
             // 这里添加注册逻辑
             alert('注册成功！');
             window.location.href = 'login.html';

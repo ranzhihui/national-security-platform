@@ -5,6 +5,232 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>学校管理 - 国家安全知识学习平台</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .school-page {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .school-header {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .school-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .school-info span {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .school-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-card h3 {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #1a237e;
+            margin-bottom: 0.5rem;
+        }
+
+        .management-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .management-section h2 {
+            color: #1a237e;
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .data-table th {
+            background: #f5f5f5;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .data-table tr:hover {
+            background: #f9f9f9;
+        }
+
+        .status-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .status-active {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .status-inactive {
+            background: #ffebee;
+            color: #c62828;
+        }
+
+        .action-button {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .view-button {
+            background: #1a237e;
+            color: white;
+        }
+
+        .view-button:hover {
+            background: #0d47a1;
+        }
+
+        .add-button {
+            background: #4CAF50;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .add-button:hover {
+            background: #45a049;
+        }
+
+        .chart-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .chart {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            height: 300px;
+        }
+
+        .chart-content {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            height: 200px;
+            padding: 1rem;
+            gap: 1rem;
+        }
+
+        .chart-bar {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            color: white;
+            border-radius: 4px 4px 0 0;
+            transition: height 0.3s ease;
+        }
+
+        .chart-bar span {
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .analysis-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .analysis-stats .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .analysis-stats .stat-card h3 {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .analysis-stats .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #1a237e;
+            margin-bottom: 0.5rem;
+        }
+
+        .analysis-stats .stat-card span {
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -13,123 +239,161 @@
                 <h1>国家安全知识学习平台</h1>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html">退出登录</a></li>
+                <li><a href="index.html"><i class="fas fa-sign-out-alt"></i> 退出登录</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="school-page">
-        <div class="school-container">
-            <div class="school-header">
-                <h2>学校管理面板</h2>
-                <div class="school-info">
-                    <span>欢迎，第一实验小学</span>
-                    <span>学校代码：SCH001</span>
+        <div class="school-header">
+            <div class="school-info">
+                <h2><i class="fas fa-school"></i> 第一实验小学</h2>
+                <span><i class="fas fa-id-card"></i> 学校代码：SCH001</span>
+            </div>
+            <button class="add-button">
+                <i class="fas fa-plus"></i> 添加教师
+            </button>
+        </div>
+
+        <div class="school-stats">
+            <div class="stat-card">
+                <h3><i class="fas fa-chalkboard-teacher"></i> 教师总数</h3>
+                <div class="stat-value">25</div>
+                <span>名教师</span>
+            </div>
+            <div class="stat-card">
+                <h3><i class="fas fa-users"></i> 班级总数</h3>
+                <div class="stat-value">12</div>
+                <span>个班级</span>
+            </div>
+            <div class="stat-card">
+                <h3><i class="fas fa-user-graduate"></i> 学生总数</h3>
+                <div class="stat-value">540</div>
+                <span>名学生</span>
+            </div>
+            <div class="stat-card">
+                <h3><i class="fas fa-clock"></i> 平均学习时长</h3>
+                <div class="stat-value">2.2</div>
+                <span>小时/天</span>
+            </div>
+        </div>
+
+        <div class="management-section">
+            <h2>
+                教师管理
+                <button class="action-button view-button">
+                    <i class="fas fa-download"></i> 导出数据
+                </button>
+            </h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>教师编号</th>
+                        <th>姓名</th>
+                        <th>班级</th>
+                        <th>学生数量</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>T2024001</td>
+                        <td>张明</td>
+                        <td>三年级一班</td>
+                        <td>45</td>
+                        <td><span class="status-badge status-active">在职</span></td>
+                        <td>
+                            <button class="action-button view-button">
+                                <i class="fas fa-eye"></i> 查看
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>T2024002</td>
+                        <td>李华</td>
+                        <td>三年级二班</td>
+                        <td>42</td>
+                        <td><span class="status-badge status-active">在职</span></td>
+                        <td>
+                            <button class="action-button view-button">
+                                <i class="fas fa-eye"></i> 查看
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>T2024003</td>
+                        <td>王芳</td>
+                        <td>三年级三班</td>
+                        <td>44</td>
+                        <td><span class="status-badge status-active">在职</span></td>
+                        <td>
+                            <button class="action-button view-button">
+                                <i class="fas fa-eye"></i> 查看
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="management-section">
+            <h2>数据分析</h2>
+            <div class="chart-container">
+                <div class="chart">
+                    <h3>学习时长分布</h3>
+                    <div class="chart-content">
+                        <div class="chart-bar" style="height: 60%; background: #1a237e;">
+                            <span>1-2小时</span>
+                            <span>35%</span>
+                        </div>
+                        <div class="chart-bar" style="height: 80%; background: #283593;">
+                            <span>2-3小时</span>
+                            <span>45%</span>
+                        </div>
+                        <div class="chart-bar" style="height: 40%; background: #3949ab;">
+                            <span>3-4小时</span>
+                            <span>20%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart">
+                    <h3>积分排名分布</h3>
+                    <div class="chart-content">
+                        <div class="chart-bar" style="height: 70%; background: #4caf50;">
+                            <span>优秀</span>
+                            <span>30%</span>
+                        </div>
+                        <div class="chart-bar" style="height: 90%; background: #8bc34a;">
+                            <span>良好</span>
+                            <span>40%</span>
+                        </div>
+                        <div class="chart-bar" style="height: 50%; background: #cddc39;">
+                            <span>及格</span>
+                            <span>20%</span>
+                        </div>
+                        <div class="chart-bar" style="height: 30%; background: #ff9800;">
+                            <span>待提高</span>
+                            <span>10%</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div class="school-stats">
+            <div class="analysis-stats">
                 <div class="stat-card">
-                    <h3>教师总数</h3>
-                    <div class="stat-value">25</div>
-                </div>
-                <div class="stat-card">
-                    <h3>班级总数</h3>
-                    <div class="stat-value">12</div>
+                    <h3><i class="fas fa-chart-line"></i> 学习活跃度</h3>
+                    <div class="stat-value">85%</div>
+                    <span>较上月提升 5%</span>
                 </div>
                 <div class="stat-card">
-                    <h3>学生总数</h3>
-                    <div class="stat-value">540</div>
+                    <h3><i class="fas fa-trophy"></i> 平均积分</h3>
+                    <div class="stat-value">280</div>
+                    <span>较上月提升 20分</span>
                 </div>
                 <div class="stat-card">
-                    <h3>平均学习时长</h3>
-                    <div class="stat-value">2.2小时</div>
-                </div>
-            </div>
-
-            <div class="grade-progress">
-                <h3>年级学习情况</h3>
-                <div class="progress-table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>年级</th>
-                                <th>班级数</th>
-                                <th>学生数</th>
-                                <th>平均完成率</th>
-                                <th>平均积分</th>
-                                <th>操作</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>一年级</td>
-                                <td>4</td>
-                                <td>180</td>
-                                <td>75%</td>
-                                <td>250</td>
-                                <td><button class="view-details">查看详情</button></td>
-                            </tr>
-                            <tr>
-                                <td>二年级</td>
-                                <td>4</td>
-                                <td>180</td>
-                                <td>82%</td>
-                                <td>280</td>
-                                <td><button class="view-details">查看详情</button></td>
-                            </tr>
-                            <tr>
-                                <td>三年级</td>
-                                <td>4</td>
-                                <td>180</td>
-                                <td>78%</td>
-                                <td>270</td>
-                                <td><button class="view-details">查看详情</button></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <div class="teacher-management">
-                <h3>教师管理</h3>
-                <div class="teacher-list">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>教师姓名</th>
-                                <th>负责班级</th>
-                                <th>学生数</th>
-                                <th>平均完成率</th>
-                                <th>操作</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>张老师</td>
-                                <td>三年级一班</td>
-                                <td>45</td>
-                                <td>85%</td>
-                                <td><button class="view-details">查看详情</button></td>
-                            </tr>
-                            <tr>
-                                <td>李老师</td>
-                                <td>二年级三班</td>
-                                <td>45</td>
-                                <td>80%</td>
-                                <td><button class="view-details">查看详情</button></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <div class="school-management">
-                <h3>学校管理</h3>
-                <div class="management-actions">
-                    <button class="action-button">添加教师</button>
-                    <button class="action-button">导出数据</button>
-                    <button class="action-button">发送通知</button>
+                    <h3><i class="fas fa-book"></i> 课程完成率</h3>
+                    <div class="stat-value">92%</div>
+                    <span>较上月提升 3%</span>
                 </div>
             </div>
         </div>
@@ -138,19 +402,8 @@
     <footer>
         <div class="footer-content">
             <p>© 2024 国家安全知识学习平台</p>
-            <p>联系我们：security@example.com</p>
+            <p><i class="fas fa-envelope"></i> 联系我们：security@example.com</p>
         </div>
     </footer>
-
-    <script>
-        // 查看详情
-        document.querySelectorAll('.view-details').forEach(button => {
-            button.addEventListener('click', function() {
-                const row = this.closest('tr');
-                const name = row.cells[0].textContent;
-                alert(`查看${name}的详细数据`);
-            });
-        });
-    </script>
 </body>
 </html> 

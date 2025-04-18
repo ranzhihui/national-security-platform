@@ -5,6 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>学生主页 - 国家安全知识学习平台</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .progress-bar {
+            height: 10px;
+            background: #eee;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .progress {
+            height: 100%;
+            background: #4CAF50;
+            border-radius: 5px;
+        }
+        .last-study {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .function-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px;
+            padding: 0 20px;
+        }
+        .function-button {
+            padding: 15px 30px;
+            background: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: background 0.3s;
+            text-align: center;
+        }
+        .function-button:hover {
+            background: #45a049;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -13,67 +62,36 @@
                 <h1>国家安全知识学习平台</h1>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html">首页</a></li>
-                <li><a href="courses.html">课程学习</a></li>
-                <li><a href="games.html">知识小游戏</a></li>
-                <li><a href="resources.html">学习资源</a></li>
-                <li><a href="rewards.html">积分兑换</a></li>
-                <li><a href="login.html">退出登录</a></li>
+                <li><a href="index.html">退出登录</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="role-student">
-        <section class="dashboard">
-            <div class="points-display">
+    <main>
+        <div class="dashboard">
+            <div class="card">
+                <h2>学习进度</h2>
+                <p>已完成：75%</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 75%"></div>
+                </div>
+                <p class="last-study">上次学习时间：2025-02-20 15:30</p>
+            </div>
+
+            <div class="card">
                 <h2>我的积分</h2>
-                <div class="points-value">350</div>
-                <p>继续学习获取更多积分！</p>
+                <p>当前积分：350</p>
+                <p>排名：第12名</p>
             </div>
+        </div>
 
-            <h2>学习进度</h2>
-            <div class="progress-grid">
-                <div class="progress-card">
-                    <h3>课程完成情况</h3>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 60%">60%</div>
-                    </div>
-                    <p class="points-info">每完成一个视频 +20积分</p>
-                </div>
-                <div class="progress-card">
-                    <h3>游戏完成情况</h3>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 40%">40%</div>
-                    </div>
-                    <p class="points-info">每完成一个游戏 +40积分</p>
-                </div>
-                <div class="progress-card">
-                    <h3>资料学习情况</h3>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 50%">50%</div>
-                    </div>
-                    <p class="points-info">每学习一个资料 +30积分</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="recent-activities">
-            <h2>最近学习</h2>
-            <div class="activity-list">
-                <div class="activity-item">
-                    <h3>国家安全基础课程</h3>
-                    <p>上次学习时间：2024-03-15</p>
-                    <p>学习进度：已完成</p>
-                    <p class="points-earned">+20积分</p>
-                </div>
-                <div class="activity-item">
-                    <h3>网络安全知识</h3>
-                    <p>上次学习时间：2024-03-14</p>
-                    <p>学习进度：进行中</p>
-                    <p class="points-earned">+20积分</p>
-                </div>
-            </div>
-        </section>
+        <div class="function-buttons">
+            <a href="video.html" class="function-button">录播课程</a>
+            <a href="games.html" class="function-button">知识游戏</a>
+            <a href="resources.html" class="function-button">学习资源</a>
+            <a href="leaderboard.html" class="function-button">排行榜</a>
+            <a href="rewards.html" class="function-button">积分兑换</a>
+        </div>
     </main>
 
     <footer>
@@ -82,7 +100,5 @@
             <p>联系我们：security@example.com</p>
         </div>
     </footer>
-
-    <script src="js/main.js"></script>
 </body>
 </html> 

@@ -5,49 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>国家安全知识学习平台</title>
     <link rel="stylesheet" href="css/style.css">
+    <script>
+        // 页面加载时自动跳转到登录页面
+        window.onload = function() {
+            window.location.href = 'login.html';
+        };
+    </script>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <h1>国家安全知识学习平台</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="login.html">登录</a></li>
-                <li><a href="register.html">注册</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section class="welcome-section">
-            <h2>欢迎使用国家安全知识学习平台</h2>
-            <p>请选择您的身份进入相应功能</p>
-        </section>
-
-        <section class="role-cards">
-            <div class="role-card" onclick="location.href='student.html'">
-                <h3>学生入口</h3>
-                <p>学习国家安全知识，参与互动游戏</p>
-            </div>
-            <div class="role-card" onclick="location.href='teacher.html'">
-                <h3>教师入口</h3>
-                <p>查看学生学习进度，管理班级</p>
-            </div>
-            <div class="role-card" onclick="location.href='school.html'">
-                <h3>学校入口</h3>
-                <p>查看全校学习情况，管理教师</p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <p>© 2024 国家安全知识学习平台</p>
-            <p>联系我们：security@example.com</p>
-        </div>
-    </footer>
-
-    <script src="js/main.js"></script>
+    <div class="loading">
+        <p>正在跳转到登录页面...</p>
+    </div>
 </body>
 </html> 

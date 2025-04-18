@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频播放 - 国家安全知识学习平台</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .video-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .video-player {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #000;
+            margin-bottom: 20px;
+        }
+        .video-info {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .video-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .video-meta {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .video-description {
+            line-height: 1.6;
+            color: #444;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+        .back-button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>国家安全知识学习平台</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="student.html" class="back-button">返回</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="video-container">
+            <div class="video-player">
+                <iframe id="videoFrame" src="" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width: 100%; height: 100%;"></iframe>
+            </div>
+            <div class="video-info">
+                <h2 class="video-title" id="videoTitle">视频标题</h2>
+                <div class="video-meta">
+                    <span id="videoDuration">时长：</span>
+                    <span> | </span>
+                    <span id="videoDate">上传时间：</span>
+                </div>
+                <div class="video-description" id="videoDescription">
+                    <p>视频描述</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 国家安全知识学习平台</p>
+            <p>联系我们：security@example.com</p>
+        </div>
+    </footer>
+
+    <script>
+        // 视频数据
+        const videos = {
+            1: {
+                title: '国家安全基础知识',
+                duration: '45分钟',
+                date: '2025-01-15',
+                description: '本视频详细介绍了国家安全的基本概念、重要性和相关法律法规。内容包括：\n- 国家安全的定义和范围\n- 国家安全法律法规体系\n- 公民在维护国家安全中的责任和义务\n- 常见的安全威胁和防范措施',
+                url: '//player.bilibili.com/player.html?isOutside=true&aid=114328170659936&bvid=BV1tCdqYeEif&cid=29383655752&p=1'
+            },
+            2: {
+                title: '网络安全防护',
+                duration: '50分钟',
+                date: '2025-01-20',
+                description: '本视频介绍了网络安全的基本知识和防护措施。内容包括：\n- 网络安全的基本概念\n- 常见的网络攻击方式\n- 个人网络安全防护\n- 企业网络安全防护',
+                url: '//player.bilibili.com/player.html?isOutside=true&aid=114328170659936&bvid=BV1tCdqYeEif&cid=29383655752&p=2'
+            },
+            3: {
+                title: '国土安全知识',
+                duration: '40分钟',
+                date: '2025-01-25',
+                description: '本视频介绍了国土安全的基本知识和重要性。内容包括：\n- 国土安全的概念\n- 国土安全的重要性\n- 国土安全的威胁\n- 国土安全的防护措施',
+                url: '//player.bilibili.com/player.html?isOutside=true&aid=114328170659936&bvid=BV1tCdqYeEif&cid=29383655752&p=3'
+            }
+        };
+
+        // 获取URL参数
+        const urlParams = new URLSearchParams(window.location.search);
+        const videoId = urlParams.get('video') || '1';
+        const video = videos[videoId];
+
+        // 更新页面内容
+        document.getElementById('videoFrame').src = video.url;
+        document.getElementById('videoTitle').textContent = video.title;
+        document.getElementById('videoDuration').textContent = `时长：${video.duration}`;
+        document.getElementById('videoDate').textContent = `上传时间：${video.date}`;
+        document.getElementById('videoDescription').innerHTML = video.description.split('\n').map(line => `<p>${line}</p>`).join('');
+    </script>
+</body>
+</html> 
