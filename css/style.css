@@ -1,0 +1,304 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* 导航栏样式 */
+.navbar {
+    background-color: #1a237e;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo h1 {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffd700;
+}
+
+/* 英雄区域样式 */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding-top: 60px;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #ffd700;
+    color: #1a237e;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #ffc107;
+}
+
+/* 课程区域样式 */
+.courses {
+    padding: 4rem 2rem;
+    background-color: #f5f5f5;
+}
+
+.courses h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #1a237e;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.course-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+}
+
+.course-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.course-card h3 {
+    padding: 1rem;
+    color: #1a237e;
+}
+
+.course-card p {
+    padding: 0 1rem 1rem;
+}
+
+.watch-button {
+    display: block;
+    text-align: center;
+    padding: 0.8rem;
+    background-color: #1a237e;
+    color: white;
+    text-decoration: none;
+    margin: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.watch-button:hover {
+    background-color: #283593;
+}
+
+/* 游戏区域样式 */
+.games {
+    padding: 4rem 2rem;
+}
+
+.games h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #1a237e;
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.game-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+}
+
+.game-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.game-card h3 {
+    padding: 1rem;
+    color: #1a237e;
+}
+
+.game-card p {
+    padding: 0 1rem 1rem;
+}
+
+.play-button {
+    display: block;
+    text-align: center;
+    padding: 0.8rem;
+    background-color: #1a237e;
+    color: white;
+    text-decoration: none;
+    margin: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.play-button:hover {
+    background-color: #283593;
+}
+
+/* 资源区域样式 */
+.resources {
+    padding: 4rem 2rem;
+    background-color: #f5f5f5;
+}
+
+.resources h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #1a237e;
+}
+
+.resource-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.resource-item {
+    background: white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.resource-item h3 {
+    color: #1a237e;
+    margin-bottom: 1rem;
+}
+
+.download-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #1a237e;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+    transition: background-color 0.3s;
+}
+
+.download-button:hover {
+    background-color: #283593;
+}
+
+/* 页脚样式 */
+footer {
+    background-color: #1a237e;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.footer-content p {
+    margin-bottom: 0.5rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        margin-top: 1rem;
+    }
+
+    .nav-links li {
+        margin: 0 1rem;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .course-grid, .game-grid {
+        grid-template-columns: 1fr;
+    }
+} 
