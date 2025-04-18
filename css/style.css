@@ -129,6 +129,7 @@ body {
     padding-bottom: 56.25%; /* 16:9 宽高比 */
     height: 0;
     overflow: hidden;
+    background-color: #000;
 }
 
 .video-container iframe {
